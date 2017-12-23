@@ -31,9 +31,9 @@ app.use( (req,res,next) => {
     next();
 });
 
-app.use((req,res,next) => {
-    res.render('maintenence.hbs');
-});
+// app.use((req,res,next) => { //If this code is uncommented, the maintenance page will display and no other page will be accessible
+//     res.render('maintenence.hbs');
+// });
 
 app.use(express.static(__dirname+"/public"));
 
@@ -60,6 +60,11 @@ app.get('/', (req,res) => { //individual get requests, the arrow function is a c
         pageTitle:'Home Page',
         welcomeMessage: "Welcome To The Home Page. This Message Was Dynamically Created"
     });
+});
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        pageTitle: "Projects"
+    })
 });
 app.get('/about', (req,res) => {
     //res.send("<h1>About Page</h1>");
