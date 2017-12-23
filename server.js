@@ -13,7 +13,7 @@ const fs = require("fs");
 *Globals
 *************************************/
 var app = express();
-
+const port = process.env.PORT || 3000; //this is the code that is needed to get heroku to deploy the web app
 /************************************
 *Middleware stuff and Handlesbars Stuff
 *************************************/
@@ -77,6 +77,6 @@ app.get('/bad', (req,res) => {
 /************************************
 *Starts the server listening on localhost:3000
 *************************************/
-app.listen(3000, () => {
-    console.log("Server Is Up On Port 3000!");
+app.listen(port, () => {
+    console.log(`Server Is Up On Port ${port}!`);
 });
