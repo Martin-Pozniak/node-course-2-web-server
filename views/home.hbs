@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{pageTitle}}</title>
+    </head>
+    <body>
+        {{> header}}
+        {{!-- By also passing in screamIt we are calling the screamit helper passing in welcomMessage as an argument --}}
+        <p>{{screamIt welcomeMessage}}</p> 
+    </body>
+    {{!-- This injects a footer partial or a big common chunk of html --}}
+    {{> footer}} 
+</html>
